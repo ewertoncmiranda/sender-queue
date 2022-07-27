@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v2")
-public class SNSConfigure {
+public class AmazonSnsService {
 
     @Autowired
     private AmazonSNSClient snsClient;

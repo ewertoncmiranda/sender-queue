@@ -1,3 +1,4 @@
+
 cloud:
   aws:
     region:
@@ -10,3 +11,14 @@ cloud:
       uri:
     end-point-sns:
       uri:
+    end-point-s3:
+      uri:
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB

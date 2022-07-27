@@ -1,8 +1,11 @@
 package com.miranda.sqsfila.config;
 
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
@@ -44,7 +47,6 @@ public class AwsConfig {
                 .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(awsAccessKey, awsSecretKey)))
                 .build();
     }
-
     @Bean
     @Primary
     public AmazonSQSAsync amazonSQSAsync() {
@@ -52,5 +54,12 @@ public class AwsConfig {
                 .withRegion(Regions.US_EAST_1)
                 .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(awsAccessKey, awsSecretKey)))
                 .build();
+    }
+    @Bean
+    public AmazonS3 s3Client() {
+        AWSCredentials credentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
+        return AmazonS3ClientBuilder.standard()
+                .withCredentials(new AWSStaticCredentialsProvider(credentials))
+                .withRegion(region).build();
     }
 }
