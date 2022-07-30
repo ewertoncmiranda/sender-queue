@@ -1,6 +1,6 @@
 package com.miranda.sqsfila.http;
 
-import com.miranda.sqsfila.config.AmazonS3BucketService;
+import com.miranda.sqsfila.aws.s3.AmazonS3BucketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@RequestMapping("/v3")
+@RequestMapping("/s3")
 @RestController
 public class BucketS3Controller {
 

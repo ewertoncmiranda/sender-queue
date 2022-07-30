@@ -1,4 +1,4 @@
-package com.miranda.sqsfila.config;
+package com.miranda.sqsfila.aws.s3;
 
 
 import com.amazonaws.services.s3.AmazonS3;
@@ -21,10 +21,8 @@ import java.io.IOException;
 public class AmazonS3BucketService {
     @Value("${cloud.aws.end-point-s3.uri}")
     private String bucketName;
-
     @Autowired
     private AmazonS3 s3Client;
-
     public String uploadArquivo(MultipartFile file) {
         File fileObj = convertMultiPartFileToFile(file);
         String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
@@ -32,8 +30,6 @@ public class AmazonS3BucketService {
         fileObj.delete();
         return "Upload do arquivo  : " + fileName;
     }
-
-
     public byte[] downloadArquivo(String fileName) {
         S3Object s3Object = s3Client.getObject(bucketName, fileName);
         S3ObjectInputStream inputStream = s3Object.getObjectContent();
