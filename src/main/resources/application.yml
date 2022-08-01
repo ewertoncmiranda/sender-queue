@@ -5,14 +5,14 @@ cloud:
       static: us-east-1
       auto: false
     credentials:
-      access-key: AKIASSB2BYCSG3PWJXXJ
-      secret-key: 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
+      access-key:
+      secret-key:
     end-point-sqs:
-      uri: https://sqs.us-east-1.amazonaws.com/176215408804/fila001
+      uri:
     end-point-sns:
-      uri: arn:aws:sns:us-east-1:176215408804:topic001
+      uri:
     end-point-s3:
-      uri: meu-bucket-001
+      uri:
 
 
 
