@@ -17,4 +17,6 @@ public class SenderQueueApplication {
 		SpringApplication.run(SenderQueueApplication.class, args);
 	}
 
+
+
 }
