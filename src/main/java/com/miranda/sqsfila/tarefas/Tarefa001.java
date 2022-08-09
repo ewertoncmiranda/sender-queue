@@ -42,6 +42,12 @@ public class Tarefa001 {
         String msg = "Disparo de hora em hora executado. Essa mensagem foi enviada as  "+gerarData() ;
         amazonSnsService.publishMessageToTopic(msg);
     }
+    @Scheduled(cron = "0 0 17 ? * FRI")
+    public void enviarMensagemDeSextou(){
+        LOG.info("Iniciando disparo de Sextou!" + gerarData());
+        String msg = GeradorDeMensagens.mensagemDeSextaFeira();
+        amazonSnsService.publishMessageToTopic(msg);
+    }
 
     @Scheduled(cron = "0 */2 * ? * *")
     public void cadaDoisMinutos(){
