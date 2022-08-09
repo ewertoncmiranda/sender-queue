@@ -1,20 +1,17 @@
-
 cloud:
   aws:
     region:
       static: us-east-1
       auto: false
     credentials:
-      access-key:
-      secret-key:
+      access-key: ${ACESS_KEY_AWS}
+      secret-key: ${SECRET_KEY_AWS}
     end-point-sqs:
-      uri:
+      uri:  ${SQS_QUEUE_ENDPOINT_001}
     end-point-sns:
-      uri:
+      uri: ${SNS_TOPIC_ENDPOINT_001}
     end-point-s3:
-      uri:
-
-
+      uri: ${S3_BUCKET_001}
 
 spring:
   servlet:
