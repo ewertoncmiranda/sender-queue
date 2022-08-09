@@ -19,6 +19,9 @@ public class GeradorDeMensagens {
         int i = random.nextInt(listaDeMensagens.size());
         return listaDeMensagens.get(i);
     }
+    public static String mensagemDeSextaFeira(){
+        return "Finalmente ,17 horas da sexta! Bom final de semana, SEXTOU!";
+    }
 
     private static void listaDeMensagens (){
         listaDeMensagens.add("Bom dia! Que seu dia seja igual a vontade de Deus: bom, perfeito e agradável.");
